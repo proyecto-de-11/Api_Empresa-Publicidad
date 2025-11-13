@@ -8,15 +8,14 @@ import { EmpresaModule } from './empresa/empresa.module';   // 👈 importa tu m
   imports: [
     // ⚙️ Configuración de la conexión a SQL Server
      TypeOrmModule.forRoot({
-  type: 'mssql',
-  host: 'localhost',
-  port: 1433,
-  username: 'nest_user',
-  password: 'NestStrong123!',
+  type: 'mysql',
+  host: 'clinica-citas-citas-clinica.f.aivencloud.com',
+  port: 13208,
+  username: 'avnadmin',
+  password: 'AVNS_UwjsMWvAGtxyIq7qdg0',
   database: 'Empresa',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: true,
-  options: { encrypt: false },
 }),
     EmpresaModule,
   ],
