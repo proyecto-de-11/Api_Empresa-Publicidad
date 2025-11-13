@@ -12,7 +12,7 @@ import { EmpresaModule } from './empresa/empresa.module';   // 👈 importa tu m
   host: 'clinica-citas-citas-clinica.f.aivencloud.com',
   port: 13208,
   username: 'avnadmin',
-  password: 'AVNS_UwjsMWvAGtxyIq7qdg0',
+  // password: 'AVNS_UwjsMWvAGtxyIq7qdg0',
   database: 'Empresa',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: true,
