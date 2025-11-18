@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { EmpresaModule } from './empresa/empresa.module';
+import { ComentarioModule } from './comentario/comentario.module';
 import { PublicacionModule } from './publicacion/publicacion.module';
 
 @Module({
@@ -20,6 +21,7 @@ import { PublicacionModule } from './publicacion/publicacion.module';
     }),
 
     EmpresaModule,
+    ComentarioModule,
     PublicacionModule,
   ],
   controllers: [AppController],
