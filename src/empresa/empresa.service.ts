@@ -33,8 +33,11 @@ return e;
 
 
 async update(id: number, updateDto: UpdateEmpresaDto): Promise<Empresa> {
-const empresa = await this.findOne(id);
-Object.assign(empresa, updateDto);
+const empresa = await this.empresaRepo.findOneBy({ID: id} as any);
+
+if (!empresa) throw new NotFoundException(`Empresa con id ${id} no encontrada`);
+this.empresaRepo.merge(empresa, updateDto);
+
 return this.empresaRepo.save(empresa);
 }
 
