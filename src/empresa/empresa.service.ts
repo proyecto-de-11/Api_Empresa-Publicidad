@@ -26,8 +26,9 @@ return this.empresaRepo.find();
 
 
 async findOne(id: number): Promise<Empresa> {
-const e = await this.empresaRepo.findOneBy({ id } as any);
-if (!e) throw new NotFoundException(`Empresa con id ${id} no encontrada`);
+const e =  await this.empresaRepo.findOneBy({usuario_id: id} as any);
+
+if (!e) throw new NotFoundException(`Empresa con id ${id} de usario no encontrada`);
 return e;
 }
 
