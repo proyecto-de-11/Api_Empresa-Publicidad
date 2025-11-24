@@ -47,4 +47,17 @@ async remove(id: number): Promise<void> {
 const res = await this.empresaRepo.delete(id);
 if (res.affected === 0) throw new NotFoundException(`Empresa con id ${id} no encontrada`);
 }
+
+async findByName(nombre: string): Promise<Empresa[]> {
+  return this.empresaRepo.find({
+    where: { Nombre: nombre }
+  });
+}
+
+async findByUsuario(usuario_id: number): Promise<Empresa[]> {
+  return this.empresaRepo.find({
+    where: { usuario_id }
+  });
+}
+
 }

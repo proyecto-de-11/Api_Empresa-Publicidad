@@ -26,6 +26,15 @@ findOne(@Param('id', ParseIntPipe) id: number) {
 return this.empresaService.findOne(id);
 }
 
+@Get('buscar/:nombre')
+findByName(@Param('nombre') nombre: string) {
+  return this.empresaService.findByName(nombre);
+}
+
+@Get('usuario/:usuario_id')
+findByUsuario(@Param('usuario_id') usuario_id: number) {
+  return this.empresaService.findByUsuario(usuario_id);
+}
 
 @Put(':id')
 update(@Param('id', ParseIntPipe) id: number, @Body() updateDto: UpdateEmpresaDto) {
