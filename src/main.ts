@@ -5,6 +5,10 @@ import { ValidationPipe } from '@nestjs/common'; // 👈 importa esto
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors({
+    origin: '*', // Permite solicitudes desde cualquier origen
+  }); // 👈 habilita CORS
+
   // ✅ habilita validaciones globales para los DTOs
   app.useGlobalPipes(
     new ValidationPipe({
